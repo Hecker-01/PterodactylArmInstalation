@@ -98,12 +98,12 @@ sudo systemctl start docker
 
 ```bash
 sudo apt install -y nginx mariadb-server redis-server \
-    php8.4 php8.4-fpm php8.4-cli php8.4-gd php8.4-mbstring php8.4-xml php8.4-curl php8.4-zip php8.4-mysql php8.4-pgsql php8.4-sqlite3 \
-    php8.4-bcmath php8.4-json php8.4-redis php8.4-intl php8.4-gmp \
+    php8.3 php8.3-fpm php8.3-cli php8.3-gd php8.3-mbstring php8.3-xml php8.3-curl php8.3-zip php8.3-mysql php8.3-pgsql php8.3-sqlite3 \
+    php8.3-bcmath php8.3-json php8.3-redis php8.3-intl php8.3-gmp \
     unzip curl git
 ```
 
-**Note:** Replace `php8.4` with the latest available PHP version for your OS.
+**Note:** Replace `php8.3` with the latest available PHP version for your OS.
 
 ### 2. Create Database
 
@@ -183,7 +183,7 @@ server {
 
     location ~ \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass unix:/var/run/php/php8.4-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;

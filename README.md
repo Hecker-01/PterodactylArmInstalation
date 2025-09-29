@@ -97,10 +97,9 @@ sudo systemctl start docker
 ### 1. Install Required Packages
 
 ```bash
-sudo apt install -y nginx mariadb-server redis-server \
-    php8.3 php8.3-fpm php8.3-cli php8.3-gd php8.3-mbstring php8.3-xml php8.3-curl php8.3-zip php8.3-mysql php8.3-pgsql php8.3-sqlite3 \
-    php8.3-bcmath php8.3-json php8.3-redis php8.3-intl php8.3-gmp \
-    unzip curl git
+sudo apt -y install php8.3 php8.3-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip} mariadb-server nginx tar unzip git redis-server
+
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 ```
 
 **Note:** Replace `php8.3` with the latest available PHP version for your OS.
